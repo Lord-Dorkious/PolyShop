@@ -37,6 +37,7 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        console = this.getServer().getConsoleSender();
         console.sendMessage(POLYSHOP_PREFIX + " Is Enabled");
     }
 
