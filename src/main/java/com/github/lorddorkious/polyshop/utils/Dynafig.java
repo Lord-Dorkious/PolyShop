@@ -1,4 +1,4 @@
-package com.github.lorddorkious.polyshop.utils.files;
+package com.github.lorddorkious.polyshop.utils;
 
 import com.github.lorddorkious.polyshop.Main;
 import com.github.lorddorkious.polyshop.constants.Misc;

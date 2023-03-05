@@ -2,7 +2,6 @@ package com.github.lorddorkious.polyshop.utils;
 
 import com.github.lorddorkious.polyshop.Main;
 import com.github.lorddorkious.polyshop.constants.Misc;
-import com.github.lorddorkious.polyshop.utils.files.Dynafig;
 import org.bukkit.configuration.ConfigurationSection;
 
 import static com.github.lorddorkious.polyshop.constants.Locations.F_LANG;
