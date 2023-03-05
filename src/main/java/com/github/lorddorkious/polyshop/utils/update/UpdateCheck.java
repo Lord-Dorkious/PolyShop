@@ -1,4 +1,4 @@
-package com.github.lorddorkious.polyshop.update;
+package com.github.lorddorkious.polyshop.utils.update;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

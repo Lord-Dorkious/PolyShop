@@ -1,6 +1,6 @@
 package com.github.lorddorkious.polyshop;
 
-import com.github.lorddorkious.polyshop.update.UpdateCheck;
+import com.github.lorddorkious.polyshop.utils.update.UpdateCheck;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.permissions.PermissionDefault;
@@ -30,6 +30,7 @@ import static com.github.lorddorkious.polyshop.constants.Perms.*;
 @Command(name = "polyshop", desc = "Opens the shop GUI", aliases = {"ps","pShop"}, permission = P_COMMAND_PSHOP, permissionMessage = FUN_ERR, usage = "/<command> [create|delete] <shop name>")
 
 public class Main extends JavaPlugin {
+    public static Main plugin;
     public static ConsoleCommandSender console;
     public static boolean updateAvail = false;
     public static String webVersion = "";
@@ -37,6 +38,7 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        plugin = this;
         console = this.getServer().getConsoleSender();
         console.sendMessage(POLYSHOP_PREFIX + " Is Enabled");
     }
@@ -45,7 +47,7 @@ public class Main extends JavaPlugin {
         CheckVer();
     }
 
-    private int ConvertVersionStringToNumber(String string)
+    private int ConvertVerStrToNum(String string)
     {
         String[] temp = string.replace("-snapshot","").replace("-release","").split("\\.");
         if(temp.length != 3)
@@ -70,8 +72,8 @@ public class Main extends JavaPlugin {
             try{
                 webVersion = version;
                 yourVersion = getDescription().getVersion();
-                int you = ConvertVersionStringToNumber(yourVersion);
-                int web = ConvertVersionStringToNumber(webVersion);
+                int you = ConvertVerStrToNum(yourVersion);
+                int web = ConvertVerStrToNum(webVersion);
 
                 if (web <= you){
                     updateAvail = false;
